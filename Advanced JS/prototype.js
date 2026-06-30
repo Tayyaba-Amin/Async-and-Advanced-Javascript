@@ -9,7 +9,7 @@ const p2 = new Person("Sara");
 p1.greet(); // Hello Ali
 p2.greet(); // Hello Sara
 
-//Prototype Inheritance
+//Prototypal Inheritance
 const animal = {
   eats: true,
   walk() {
@@ -35,4 +35,16 @@ const d = new Dog();
 d.eat();  // "Eating..." (inherited from Animal)
 d.bark(); // "Woof!"
 
+//prototype chain
+const livingThing = {
+    alive: true
+};
+
+const animal = Object.create(livingThing);
+animal.eats = true;
+const dog = Object.create(animal);
+dog.barks = true;
+console.log(dog.barks); // true
+console.log(dog.eats);  // true
+console.log(dog.alive); // true
 
